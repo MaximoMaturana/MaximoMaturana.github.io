@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Maximo Maturana</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">MM</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="utility-knife.html">Utility Knife</a></li>
+        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">My Work</p>
+      <h1 class="page-hero-title">Projects</h1>
+      <p class="page-hero-sub">Engineering simulations, web systems, and interactive experiences.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="projects-list">
+
+        <article class="project-list-item">
+          <div class="project-list-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">Production System</span>
+          </div>
+          <div class="project-list-body">
+            <h2>Utility Knife Production Line</h2>
+            <p>A full-stack Advanced Programming project simulating a real utility knife manufacturing line. The system generates live telemetry, stores it in InfluxDB, visualizes metrics in Grafana, and provides a Flask-based CMMS website for maintenance management and work order tracking.</p>
+            <div class="tech-stack">
+              <span>Python</span><span>Flask</span><span>InfluxDB</span><span>Grafana</span><span>Docker</span><span>HTML/CSS/JS</span>
+            </div>
+            <div class="project-list-links">
+              <a href="utility-knife.html" class="btn btn-primary btn-sm">View Details →</a>
+              <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+            </div>
+          </div>
+          <div class="project-list-img placeholder-img">
+            <div class="placeholder-label">[ Utility Knife Preview ]</div>
+            <!-- Replace with: <img src="assets/utility-knife-preview.png" alt="Utility Knife"> -->
+          </div>
+        </article>
+
+        <article class="project-list-item">
+          <div class="project-list-meta">
+            <span class="project-year">2024</span>
+            <span class="project-type">Game Development</span>
+          </div>
+          <div class="project-list-body">
+            <h2>Trust Issues</h2>
+            <p>A 2D platformer and puzzle game built entirely in Python using Pygame. Features custom character mechanics, hand-crafted level design, original artwork, and interactive gameplay systems. A personal exploration of game development from scratch.</p>
+            <div class="tech-stack">
+              <span>Python</span><span>Pygame</span><span>2D Game</span><span>Level Design</span>
+            </div>
+            <div class="project-list-links">
+              <a href="trust-issues.html" class="btn btn-primary btn-sm">View Details →</a>
+              <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+            </div>
+          </div>
+          <div class="project-list-img placeholder-img">
+            <div class="placeholder-label">[ Trust Issues Preview ]</div>
+            <!-- Replace with: <img src="assets/trust-issues-preview.png" alt="Trust Issues"> -->
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Maximo Maturana</span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="utility-knife.html">Utility Knife</a>
+        <a href="trust-issues.html">Trust Issues</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

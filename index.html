@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maximo Maturana — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">MM</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="utility-knife.html">Utility Knife</a></li>
+        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Maximo Maturana · Mechatronics Student</p>
+      <h1 class="hero-headline">Engineering ideas<br>into <span class="accent">interactive</span><br>systems.</h1>
+      <p class="hero-sub">Simulations, automation, HMI interfaces, and production line systems —<br>built with Python, Flask, Docker, and more.</p>
+      <div class="hero-ctas">
+        <a href="projects.html" class="btn btn-primary">View Projects <span class="btn-arrow">→</span></a>
+        <a href="contact.html" class="btn btn-ghost">Contact Me <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="section-label">About Me</p>
+          <h2 class="section-heading">Building things that move, think, and respond.</h2>
+        </div>
+        <div class="about-right">
+          <p>I'm a Mechatronics Engineering student passionate about combining software and systems thinking. I build production line simulations, CMMS web apps, HMI interfaces, and interactive games — projects that live at the intersection of code, engineering, and design.</p>
+          <p>Currently studying at SRH, I work with Python, Docker, InfluxDB, Grafana, Flask, and web technologies to create projects that go beyond theory into working, deployable systems.</p>
+          <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-outline">GitHub Profile →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills-section">
+    <div class="container">
+      <p class="section-label">Skills & Interests</p>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>Python Programming</div>
+        <div class="skill-item"><span class="skill-dot"></span>Mechatronics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Production Line Simulation</div>
+        <div class="skill-item"><span class="skill-dot"></span>HMI Interfaces</div>
+        <div class="skill-item"><span class="skill-dot"></span>CMMS Systems</div>
+        <div class="skill-item"><span class="skill-dot"></span>InfluxDB / Grafana</div>
+        <div class="skill-item"><span class="skill-dot"></span>Docker</div>
+        <div class="skill-item"><span class="skill-dot"></span>Flask / Web Dev</div>
+        <div class="skill-item"><span class="skill-dot"></span>Automation</div>
+        <div class="skill-item"><span class="skill-dot"></span>Game Development (Pygame)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section projects-section">
+    <div class="container">
+      <p class="section-label">Featured Projects</p>
+      <h2 class="section-heading">What I've built</h2>
+      <div class="projects-grid">
+
+        <!-- Card is one big link — click anywhere to go to project page -->
+        <a href="utility-knife.html" class="proj-card">
+          <div class="proj-card-badge">Latest Project</div>
+          <!-- REPLACE the div below with your actual screenshot:
+               <img src="assets/utility-knife-preview.png" alt="Utility Knife Production Line" class="proj-card-img"> -->
+          <div class="proj-card-img proj-card-placeholder">
+            <span>[ Add utility-knife-preview.png to assets/ ]</span>
+          </div>
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">Production System · Python · Flask · Docker</p>
+              <h3 class="proj-card-title">Utility Knife<br>Production Line</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="trust-issues.html" class="proj-card">
+          <!-- REPLACE the div below with your actual screenshot:
+               <img src="assets/trust-issues-preview.png" alt="Trust Issues" class="proj-card-img"> -->
+          <div class="proj-card-img proj-card-placeholder">
+            <span>[ Add trust-issues-preview.png to assets/ ]</span>
+          </div>
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">2D Game · Python · Pygame</p>
+              <h3 class="proj-card-title">Trust Issues</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+      <div class="section-cta">
+        <a href="projects.html" class="btn btn-outline">See All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Maximo Maturana</span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="utility-knife.html">Utility Knife</a>
+        <a href="trust-issues.html">Trust Issues</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
