@@ -1298,6 +1298,7 @@ img.screenshot-img {
   justify-content: center;
   overflow: hidden;
   position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Expand icon that appears on hover */
@@ -1321,6 +1322,11 @@ img.screenshot-img {
 }
 
 .screenshot-placeholder:hover::after { opacity: 1; }
+
+.screenshot-placeholder:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
 
 .screenshot-placeholder:hover img.screenshot-img {
   transform: scale(1.03);
