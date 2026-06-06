@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Utility Knife Production Line — Maximo Maturana</title>
+  <title>Maximo Maturana — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html">MM</a>
@@ -16,215 +17,113 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="utility-knife.html" class="active">Utility Knife</a></li>
+        <li><a href="utility-knife.html">Utility Knife</a></li>
         <li><a href="trust-issues.html">Trust Issues</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Project Hero -->
-  <section class="page-hero project-page-hero">
-    <div class="container">
-      <a href="projects.html" class="back-link">← All Projects</a>
-      <div class="project-header-meta">
-        <span class="project-type-badge">Production System · 2025</span>
-      </div>
-      <h1 class="page-hero-title">Utility Knife<br>Production Line</h1>
-      <p class="page-hero-sub">A full-stack simulation of a real manufacturing process: live telemetry, dashboards, maintenance management, and more.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Maximo Maturana · Mechatronics Student</p>
+      <h1 class="hero-headline">Engineering ideas<br>into <span class="accent">interactive</span><br>systems.</h1>
+      <p class="hero-sub">Simulations, automation, HMI interfaces, and production line systems —<br>built with Python, Flask, Docker, and more.</p>
       <div class="hero-ctas">
-        <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="projects.html" class="btn btn-primary">View Projects <span class="btn-arrow">→</span></a>
+        <a href="contact.html" class="btn btn-ghost">Contact Me <span class="btn-arrow">→</span></a>
       </div>
     </div>
+    <div class="hero-scroll-hint">scroll</div>
   </section>
 
-  <!-- Overview -->
-  <section class="section">
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
     <div class="container">
-      <div class="project-overview-grid">
-        <div>
-          <p class="section-label">Overview</p>
-          <h2 class="section-heading">What does it do?</h2>
-          <p>The Utility Knife Production Line simulates a real manufacturing process — from blade moulding to handle assembly and final shipping. Every station produces live telemetry data that flows through a pipeline of tools: InfluxDB stores the measurements, Grafana visualizes them in real time, and a custom CMMS website lets operators manage maintenance and track machine health.</p>
-          <p>It is not just a simulation. It is a complete production-grade system architecture built as part of Advanced Programming coursework at SRH.</p>
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="section-label">About Me</p>
+          <h2 class="section-heading">Building things that move, think, and respond.</h2>
         </div>
-        <div class="project-tech-sidebar">
-          <p class="sidebar-label">Tech Stack</p>
-          <ul class="tech-list">
-            <li><span class="tech-icon">🐍</span> Python 3 — backend & simulation</li>
-            <li><span class="tech-icon">🌶️</span> Flask — CMMS web application</li>
-            <li><span class="tech-icon">📦</span> Docker — service orchestration</li>
-            <li><span class="tech-icon">🗄️</span> InfluxDB — time-series database</li>
-            <li><span class="tech-icon">📊</span> Grafana — metrics dashboard</li>
-            <li><span class="tech-icon">🌐</span> HTML / CSS / JS — CMMS frontend</li>
-          </ul>
-          <p class="sidebar-label" style="margin-top:2rem;">GitHub</p>
-          <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-outline btn-sm">MaximoMaturana →</a>
+        <div class="about-right">
+          <p>I'm a Mechatronics Engineering student passionate about combining software and systems thinking. I build production line simulations, CMMS web apps, HMI interfaces, and interactive games — projects that live at the intersection of code, engineering, and design.</p>
+          <p>Currently studying at SRH, I work with Python, Docker, InfluxDB, Grafana, Flask, and web technologies to create projects that go beyond theory into working, deployable systems.</p>
+          <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-outline">GitHub Profile →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- System Architecture -->
-  <section class="section alt-section">
+  <!-- SKILLS -->
+  <section class="section skills-section">
     <div class="container">
-      <p class="section-label">System Architecture</p>
-      <h2 class="section-heading">How it all fits together</h2>
-      <div class="arch-flow">
-        <div class="arch-step">
-          <div class="arch-step-num">01</div>
-          <h3>Production Simulation</h3>
-          <p><code>utility_knife_production_line.py</code> runs the stations: Handle, Blade, LockSlider, BeltClip. Each station tracks wear, defect rate, and state.</p>
-        </div>
-        <div class="arch-arrow">→</div>
-        <div class="arch-step">
-          <div class="arch-step-num">02</div>
-          <h3>Telemetry Producer</h3>
-          <p><code>producer.py</code> reads live values and streams them into InfluxDB — temperatures, parts produced, defect rates, wear levels, maintenance events.</p>
-        </div>
-        <div class="arch-arrow">→</div>
-        <div class="arch-step">
-          <div class="arch-step-num">03</div>
-          <h3>InfluxDB</h3>
-          <p>A Docker-hosted time-series database storing all telemetry. The CMMS and Grafana both query this data in real time.</p>
-        </div>
-        <div class="arch-arrow">→</div>
-        <div class="arch-step">
-          <div class="arch-step-num">04</div>
-          <h3>Grafana Dashboard</h3>
-          <p>Live Grafana panels visualize production metrics: temperatures, part counts, defect rates, station wear, and maintenance events.</p>
-        </div>
-        <div class="arch-arrow">→</div>
-        <div class="arch-step">
-          <div class="arch-step-num">05</div>
-          <h3>CMMS Website</h3>
-          <p>A Flask-powered web app where operators can view machine health, create work orders, and close maintenance tasks — all synced with live InfluxDB data.</p>
-        </div>
+      <p class="section-label">Skills & Interests</p>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>Python Programming</div>
+        <div class="skill-item"><span class="skill-dot"></span>Mechatronics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Production Line Simulation</div>
+        <div class="skill-item"><span class="skill-dot"></span>HMI Interfaces</div>
+        <div class="skill-item"><span class="skill-dot"></span>CMMS Systems</div>
+        <div class="skill-item"><span class="skill-dot"></span>InfluxDB / Grafana</div>
+        <div class="skill-item"><span class="skill-dot"></span>Docker</div>
+        <div class="skill-item"><span class="skill-dot"></span>Flask / Web Dev</div>
+        <div class="skill-item"><span class="skill-dot"></span>Automation</div>
+        <div class="skill-item"><span class="skill-dot"></span>Game Development (Pygame)</div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SCREENSHOTS — LIGHTBOX ENABLED
-       
-       HOW TO ADD YOUR IMAGES:
-       Each .screenshot-card has one <img> tag.
-       Change the src="assets/YOUR-FILE-NAME.png" to match
-       your exact filename in the assets/ folder.
-       The filename is CASE-SENSITIVE on GitHub Pages.
-       
-       To add more screenshots: copy any .screenshot-card block
-       and paste it inside .screenshots-grid with a new src.
-       ============================================================ -->
-  <section class="section">
+  <!-- FEATURED PROJECTS -->
+  <section class="section projects-section">
     <div class="container">
-      <p class="section-label">Screenshots</p>
-      <h2 class="section-heading">The system in action</h2>
-      <p class="screenshots-hint">Click any image to view full size — use arrows or keyboard to browse.</p>
+      <p class="section-label">Featured Projects</p>
+      <h2 class="section-heading">What I've built</h2>
+      <div class="projects-grid">
 
-      <div class="screenshots-grid">
-
-        <!-- SCREENSHOT 1 — Change src to your actual filename -->
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/uk-hmi.png"
-                 alt="HMI Interface"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-hmi.png not found ]</div>'">
+        <!-- Card is one big link — click anywhere to go to project page -->
+        <a href="utility-knife.html" class="proj-card">
+          <div class="proj-card-badge">Latest Project</div>
+          <!-- REPLACE the div below with your actual screenshot:
+               <img src="assets/utility-knife-preview.png" alt="Utility Knife Production Line" class="proj-card-img"> -->
+          <div class="proj-card-img proj-card-placeholder">
+            <span>[ Add utility-knife-preview.png to assets/ ]</span>
           </div>
-          <p class="screenshot-caption">HMI — Human-Machine Interface showing live station status</p>
-        </div>
-
-        <!-- SCREENSHOT 2 — Change src to your actual filename -->
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/uk-grafana.png"
-                 alt="Grafana Dashboard"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-grafana.png not found ]</div>'">
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">Production System · Python · Flask · Docker</p>
+              <h3 class="proj-card-title">Utility Knife<br>Production Line</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
           </div>
-          <p class="screenshot-caption">Grafana — production metrics dashboard in real time</p>
-        </div>
+        </a>
 
-        <!-- SCREENSHOT 3 — Change src to your actual filename -->
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/uk-cmms-dashboard.png"
-                 alt="CMMS Dashboard"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-cmms-dashboard.png not found ]</div>'">
+        <a href="trust-issues.html" class="proj-card">
+          <!-- REPLACE the div below with your actual screenshot:
+               <img src="assets/trust-issues-preview.png" alt="Trust Issues" class="proj-card-img"> -->
+          <div class="proj-card-img proj-card-placeholder">
+            <span>[ Add trust-issues-preview.png to assets/ ]</span>
           </div>
-          <p class="screenshot-caption">CMMS — maintenance monitoring and work order management</p>
-        </div>
-
-        <!-- SCREENSHOT 4 — Change src to your actual filename -->
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/uk-work-orders.png"
-                 alt="Work Orders"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-work-orders.png not found ]</div>'">
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">2D Game · Python · Pygame</p>
+              <h3 class="proj-card-title">Trust Issues</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
           </div>
-          <p class="screenshot-caption">CMMS — work order creation and tracking per station</p>
-        </div>
+        </a>
 
-        <!-- ADD MORE SCREENSHOTS HERE — just copy this block:
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/YOUR-FILE-NAME.png"
-                 alt="Description"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ file not found ]</div>'">
-          </div>
-          <p class="screenshot-caption">Your caption here</p>
-        </div>
-        -->
-
+      </div>
+      <div class="section-cta">
+        <a href="projects.html" class="btn btn-outline">See All Projects →</a>
       </div>
     </div>
   </section>
 
-  <!-- CMMS Features -->
-  <section class="section alt-section">
-    <div class="container">
-      <p class="section-label">CMMS Features</p>
-      <h2 class="section-heading">Maintenance management, built properly</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔧</div>
-          <h3>Work Orders</h3>
-          <p>Create, track, and close maintenance work orders per station. Each order records the station, issue type, and completion status.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📡</div>
-          <h3>Live Sensor Data</h3>
-          <p>The CMMS reads live telemetry directly from InfluxDB — tool wear, defect rates, temperatures — displayed in the dashboard.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚠️</div>
-          <h3>Threshold Alerts</h3>
-          <p>If wear exceeds 10% or defect rate exceeds 22%, the system flags the station and recommends corrective or preventive maintenance.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <h3>Station Monitoring</h3>
-          <p>Monitor all four stations — Handle, Blade, LockSlider, BeltClip — with per-station health indicators.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta-section">
-    <div class="container cta-inner">
-      <h2>Want to see the code?</h2>
-      <p>The full project including Docker setup, producer, CMMS, and simulation is on GitHub.</p>
-      <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-primary">View on GitHub →</a>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <span class="footer-logo">Maximo Maturana</span>
