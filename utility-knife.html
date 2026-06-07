@@ -17,9 +17,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="utility-knife.html" class="active">Utility Knife</a></li>
-        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger active">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html" class="active">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -106,82 +112,41 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SCREENSHOTS — LIGHTBOX ENABLED
-       
-       HOW TO ADD YOUR IMAGES:
-       Each .screenshot-card has one <img> tag.
-       Change the src="assets/YOUR-FILE-NAME.png" to match
-       your exact filename in the assets/ folder.
-       The filename is CASE-SENSITIVE on GitHub Pages.
-       
-       To add more screenshots: copy any .screenshot-card block
-       and paste it inside .screenshots-grid with a new src.
-       ============================================================ -->
+  <!-- Screenshots -->
   <section class="section">
     <div class="container">
       <p class="section-label">Screenshots</p>
       <h2 class="section-heading">The system in action</h2>
       <p class="screenshots-hint">Click any image to view full size — use arrows or keyboard to browse.</p>
-
       <div class="screenshots-grid">
-
-        <!-- SCREENSHOT 1 — Change src to your actual filename -->
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-            <img src="assets/uk-hmi.png"
-                 alt="HMI Interface"
-                 class="screenshot-img"
+            <img src="assets/uk-hmi.png" alt="HMI Interface" class="screenshot-img"
                  onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-hmi.png not found ]</div>'">
           </div>
           <p class="screenshot-caption">HMI — Human-Machine Interface showing live station status</p>
         </div>
-
-        <!-- SCREENSHOT 2 — Change src to your actual filename -->
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-            <img src="assets/uk-grafana.png"
-                 alt="Grafana Dashboard"
-                 class="screenshot-img"
+            <img src="assets/uk-grafana.png" alt="Grafana Dashboard" class="screenshot-img"
                  onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-grafana.png not found ]</div>'">
           </div>
           <p class="screenshot-caption">Grafana — production metrics dashboard in real time</p>
         </div>
-
-        <!-- SCREENSHOT 3 — Change src to your actual filename -->
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-            <img src="assets/uk-cmms-dashboard.png"
-                 alt="CMMS Dashboard"
-                 class="screenshot-img"
+            <img src="assets/uk-cmms-dashboard.png" alt="CMMS Dashboard" class="screenshot-img"
                  onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-cmms-dashboard.png not found ]</div>'">
           </div>
           <p class="screenshot-caption">CMMS — maintenance monitoring and work order management</p>
         </div>
-
-        <!-- SCREENSHOT 4 — Change src to your actual filename -->
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-            <img src="assets/uk-work-orders.png"
-                 alt="Work Orders"
-                 class="screenshot-img"
+            <img src="assets/uk-work-orders.png" alt="Work Orders" class="screenshot-img"
                  onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ uk-work-orders.png not found ]</div>'">
           </div>
           <p class="screenshot-caption">CMMS — work order creation and tracking per station</p>
         </div>
-
-        <!-- ADD MORE SCREENSHOTS HERE — just copy this block:
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <img src="assets/YOUR-FILE-NAME.png"
-                 alt="Description"
-                 class="screenshot-img"
-                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ file not found ]</div>'">
-          </div>
-          <p class="screenshot-caption">Your caption here</p>
-        </div>
-        -->
-
       </div>
     </div>
   </section>
@@ -231,8 +196,6 @@
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="utility-knife.html">Utility Knife</a>
-        <a href="trust-issues.html">Trust Issues</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>

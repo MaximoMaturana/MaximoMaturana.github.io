@@ -17,9 +17,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="utility-knife.html">Utility Knife</a></li>
-        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger active">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -29,7 +35,7 @@
     <div class="container">
       <p class="section-label">My Work</p>
       <h1 class="page-hero-title">Projects</h1>
-      <p class="page-hero-sub">Engineering simulations, web systems, and interactive experiences.</p>
+      <p class="page-hero-sub">Engineering simulations, autonomous robots, and interactive experiences.</p>
     </div>
   </section>
 
@@ -50,12 +56,51 @@
             </div>
             <div class="project-list-links">
               <a href="utility-knife.html" class="btn btn-primary btn-sm">View Details →</a>
-              <a href="https://github.com/MaximoMaturana/UtilityKnifeProductionLine" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
             </div>
           </div>
           <div class="project-list-img placeholder-img">
-            
-             <img src="assets/utility-knife-preview.png" alt="Utility Knife" class="proj-card-img"> 
+            <img src="assets/utility-knife-preview.png" alt="Utility Knife">
+          </div>
+        </article>
+
+        <article class="project-list-item">
+          <div class="project-list-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Robotics</span>
+          </div>
+          <div class="project-list-body">
+            <h2>CareBot — Autonomous Medical Supply Carrier</h2>
+            <p>Conceptual design of an autonomous follow-me robot for hospital ward rounds. Applies the VDI 2221 systematic design methodology — problem definition, concept evaluation, drivetrain sizing, sensor architecture, risk assessment, and a full prototype feasibility study. Estimated prototype cost: ~€865.</p>
+            <div class="tech-stack">
+              <span>VDI 2221</span><span>ESP32</span><span>Differential Drive</span><span>ToF Sensors</span><span>CAD</span><span>Engineering Analysis</span>
+            </div>
+            <div class="project-list-links">
+              <a href="carebot.html" class="btn btn-primary btn-sm">View Details →</a>
+            </div>
+          </div>
+          <div class="project-list-img placeholder-img">
+            <img src="assets/carebot-model.png" alt="CareBot">
+          </div>
+        </article>
+
+        <article class="project-list-item">
+          <div class="project-list-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Mechanical Design</span>
+          </div>
+          <div class="project-list-body">
+            <h2>Follice Box — Autonomous Follow-Me Cooler</h2>
+            <p>Conceptual robotic cooler platform designed to autonomously follow a user across different terrains. Includes all-terrain differential drive chassis, 50 L cooler box design, engineering calculations, component selection, and 3D CAD modeling — targeting a €300–400 budget.</p>
+            <div class="tech-stack">
+              <span>CAD / 3D Modeling</span><span>Mechanical Design</span><span>Differential Steering</span><span>Engineering Calc.</span><span>BOM</span>
+            </div>
+            <div class="project-list-links">
+              <a href="follice-box.html" class="btn btn-primary btn-sm">View Details →</a>
+            </div>
+          </div>
+          <div class="project-list-img placeholder-img">
+            <img src="assets/follice-box-preview.png" alt="Follice Box">
           </div>
         </article>
 
@@ -76,7 +121,7 @@
             </div>
           </div>
           <div class="project-list-img placeholder-img">
-             <img src="assets/trust-issues-preview.png" alt="Trust Issues"> 
+            <img src="assets/trust-issues-preview.png" alt="Trust Issues">
           </div>
         </article>
 
@@ -90,8 +135,6 @@
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="utility-knife.html">Utility Knife</a>
-        <a href="trust-issues.html">Trust Issues</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>

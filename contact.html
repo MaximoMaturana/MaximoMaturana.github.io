@@ -17,9 +17,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="utility-knife.html">Utility Knife</a></li>
-        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
@@ -52,7 +58,7 @@
               </div>
             </a>
 
-            <a href="mailto:@example.com" class="contact-link-card">
+            <a href="mailto:maxmaturanac@gmail.com" class="contact-link-card">
               <div class="contact-link-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
@@ -93,8 +99,6 @@
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="utility-knife.html">Utility Knife</a>
-        <a href="trust-issues.html">Trust Issues</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>

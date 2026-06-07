@@ -17,9 +17,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="utility-knife.html">Utility Knife</a></li>
-        <li><a href="trust-issues.html" class="active">Trust Issues</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger active">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html" class="active">Trust Issues</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -39,7 +45,6 @@
     </div>
   </section>
 
-  <!-- Overview -->
   <section class="section">
     <div class="container">
       <div class="project-overview-grid">
@@ -65,7 +70,6 @@
     </div>
   </section>
 
-  <!-- Features -->
   <section class="section alt-section">
     <div class="container">
       <p class="section-label">Features</p>
@@ -95,57 +99,51 @@
     </div>
   </section>
 
-  <!-- Screenshots -->
   <section class="section">
     <div class="container">
       <p class="section-label">Screenshots</p>
       <h2 class="section-heading">Gameplay preview</h2>
+      <p class="screenshots-hint">Click any image to view full size — use arrows or keyboard to browse.</p>
       <div class="screenshots-grid">
-
-
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-             <img src="assets/trust-issues-preview.png" alt="Trust Issues gameplay"> 
+            <img src="assets/trust-issues-preview.png" alt="Trust Issues gameplay" class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ trust-issues-preview.png ]</div>'">
           </div>
-          <p class="screenshot-caption">Trust Issues Preview</p>
+          <p class="screenshot-caption">Trust Issues — gameplay preview</p>
         </div>
-
-
-
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-             <img src="assets/trust-issues-menu.png" alt="Trust Issues gameplay"> 
+            <img src="assets/trust-issues-menu.png" alt="Trust Issues menu" class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ trust-issues-menu.png ]</div>'">
           </div>
           <p class="screenshot-caption">Main Menu — 12 levels with unique challenges</p>
         </div>
-
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-             <img src="assets/trust-issues-1.png" alt="Trust Issues gameplay"> 
+            <img src="assets/trust-issues-1.png" alt="Trust Issues level 1" class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ trust-issues-1.png ]</div>'">
           </div>
           <p class="screenshot-caption">Main gameplay — player movement and level design</p>
         </div>
-
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-             <img src="assets/trust-issues-2.png" alt="Trust Issues level"> 
+            <img src="assets/trust-issues-2.png" alt="Trust Issues level 2" class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ trust-issues-2.png ]</div>'">
           </div>
           <p class="screenshot-caption">Level design — hand-crafted platformer challenges</p>
         </div>
-
         <div class="screenshot-card">
           <div class="screenshot-placeholder">
-             <img src="assets/trust-issues-3.png" alt="Trust Issues art"> 
+            <img src="assets/trust-issues-3.png" alt="Trust Issues art" class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ trust-issues-3.png ]</div>'">
           </div>
           <p class="screenshot-caption">A common screen players will see</p>
         </div>
-
       </div>
-      <p class="screenshot-note">→ Drop your existing Trust Issues screenshots into the <code>assets/</code> folder and update the <code>src</code> paths above.</p>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section cta-section">
     <div class="container cta-inner">
       <h2>See the source code</h2>
@@ -160,8 +158,6 @@
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="utility-knife.html">Utility Knife</a>
-        <a href="trust-issues.html">Trust Issues</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>

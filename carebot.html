@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareBot — Maximo Maturana</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">MM</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger active">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html" class="active">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="page-hero project-page-hero">
+    <div class="container">
+      <a href="projects.html" class="back-link">← All Projects</a>
+      <div class="project-header-meta">
+        <span class="project-type-badge">Robotics · Mechatronics · 2026</span>
+      </div>
+      <h1 class="page-hero-title">CareBot</h1>
+      <p class="page-hero-sub">Conceptual design of an autonomous follow-me medical supply carrier for hospital ward rounds — applying the VDI 2221 systematic design methodology end-to-end.</p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <p class="section-label">Overview</p>
+          <h2 class="section-heading">What does it do?</h2>
+          <p>CareBot is a conceptual autonomous follow-me robot designed to assist hospital staff during ward rounds. Nurses and doctors spend a significant portion of their time transporting supplies between departments — CareBot addresses this by following a healthcare worker, carrying up to 30 kg of medical supplies, and stopping safely the moment any obstacle is detected.</p>
+          <p>The project applies the VDI 2221 systematic design methodology from problem definition through detailed engineering analysis. Three drivetrain concepts were evaluated via a weighted decision matrix — a differential drive platform was selected for its simplicity, reliability, and suitability for indoor hospital environments. Estimated prototype cost: ~€865.</p>
+        </div>
+        <div class="project-tech-sidebar">
+          <p class="sidebar-label">Key Specs</p>
+          <ul class="tech-list">
+            <li><span class="tech-icon">⚖️</span> Max payload: 30 kg</li>
+            <li><span class="tech-icon">🏃</span> Max speed: 0.8 m/s</li>
+            <li><span class="tech-icon">🔋</span> Battery: 24 V, 20 Ah (~4 h)</li>
+            <li><span class="tech-icon">📏</span> Robot width: ≤ 600 mm</li>
+            <li><span class="tech-icon">🧠</span> Controller: ESP32</li>
+            <li><span class="tech-icon">⚡</span> Motor driver: Cytron MDDS30</li>
+            <li><span class="tech-icon">👁️</span> Sensors: 6× VL53L1X ToF</li>
+            <li><span class="tech-icon">💶</span> Prototype cost: ~€865</li>
+          </ul>
+          <p class="sidebar-label" style="margin-top:2rem;">Disciplines</p>
+          <ul class="tech-list">
+            <li><span class="tech-icon">📐</span> VDI 2221 Methodology</li>
+            <li><span class="tech-icon">🔩</span> Mechanical Design</li>
+            <li><span class="tech-icon">💻</span> Embedded Systems</li>
+            <li><span class="tech-icon">🛡️</span> Safety Systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Process / Architecture flow -->
+  <section class="section alt-section">
+    <div class="container">
+      <p class="section-label">Design Process — VDI 2221</p>
+      <h2 class="section-heading">How it all fits together</h2>
+      <div class="arch-flow">
+        <div class="arch-step">
+          <div class="arch-step-num">01</div>
+          <h3>Problem Definition</h3>
+          <p>Identified that hospital staff spend significant time on manual logistics. User needs defined: minimal interaction, safe navigation, reliable following, organized storage, easy-to-clean surfaces.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">02</div>
+          <h3>Functional Structure</h3>
+          <p>System inputs (power, user signal, obstacle data) and outputs (motion, supply transport, safe stop) mapped. Decomposed into sub-functions: store, power, detect, process, move.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">03</div>
+          <h3>Concept Evaluation</h3>
+          <p>Three drivetrain architectures compared via weighted decision matrix across cost, reliability, complexity, efficiency, and manufacturability. Differential drive scored highest (21/25).</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">04</div>
+          <h3>Engineering Calculations</h3>
+          <p>Wheel speed (102 RPM), motor torque (2.37 Nm), battery runtime (4 h at 120 W avg), and encoder resolution (≥100 PPR) all derived analytically to validate component selection.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">05</div>
+          <h3>Safety & Feasibility</h3>
+          <p>Multi-layer safety: 6× ToF sensors, front bumper switches, emergency stop, current limiting, auto-stop on signal loss. Technical, economic, and manufacturing feasibility confirmed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Project Visuals</p>
+      <h2 class="section-heading">CAD model & system design</h2>
+      <p class="screenshots-hint">Click any image to view full size — use arrows or keyboard to browse.</p>
+      <div class="screenshots-grid">
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/carebot-cad-model.png"
+                 alt="CareBot 3D CAD model"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ carebot-cad-model.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">3D CAD model — cabinet structure with differential drive base and drawer system</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/carebot-exploded-view-1.png"
+                 alt="CareBot exploded view"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ carebot-exploded-view-1.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Exploded CAD Front view — cabinet, drawer system, drive base, wheels, and electronics</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/carebot-exploded-view-2.png"
+                 alt="CareBot exploded view"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ carebot-exploded-view-2.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Exploded CAD Rear view — cabinet, drawer system, drive base, wheels, and electronics</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/carebot-functional-structure.png"
+                 alt="CareBot functional structure and concept sketches"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ carebot-functional-structure.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Functional structure diagram and concept sketches from the VDI 2221 conceptualization phase</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section alt-section">
+    <div class="container">
+      <p class="section-label">System Highlights</p>
+      <h2 class="section-heading">Key design decisions</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Differential Drive</h3>
+          <p>Two 24 V, 90 W gearmotors with 5.63 Nm torque controlled via Cytron MDDS30. Front caster wheels ensure smooth, stable manoeuvring in narrow hospital corridors.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔭</div>
+          <h3>Multi-Layer Safety</h3>
+          <p>Six VL53L1X time-of-flight sensors provide 2 m obstacle detection range. Front bumper microswitches act as a final hardware safety layer triggering an immediate stop.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>ESP32 Controller</h3>
+          <p>Single ESP32 manages sensor data, motor PWM signals, encoder feedback, and Bluetooth follow-me communication — all simultaneously at prototype level.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏥</div>
+          <h3>Hospital-Ready Design</h3>
+          <p>HDPE cabinet panels — durable, chemically resistant, and easy to clean. Aluminium structural frame. Multiple drawers with telescopic ball-bearing slides for organized supply access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Read the Report -->
+  <section class="section">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <p class="section-label">Full Report</p>
+          <h2 class="section-heading">Read the full engineering report</h2>
+          <p>The complete CareBot report covers every stage of the VDI 2221 design process in detail — problem definition, literature review, user requirements, functional structure, concept generation, weighted evaluation matrix, system design, all engineering calculations, bill of materials, risk assessment, and feasibility study.</p>
+          <p>If you want to dive deeper into the methodology, the numbers behind the component selection, or the full safety analysis, the report is available to download below.</p>
+          <a href="assets/Maximo_Maturana_100006185_CareBot.pdf" download class="btn btn-primary" style="margin-top:0.5rem;">
+            Download Report (PDF) ↓
+          </a>
+        </div>
+        <div class="project-tech-sidebar">
+          <p class="sidebar-label">Report Contents</p>
+          <ul class="tech-list">
+            <li><span class="tech-icon">📖</span> Abstract & Introduction</li>
+            <li><span class="tech-icon">📋</span> Problem Definition & User Needs</li>
+            <li><span class="tech-icon">🔲</span> Black Box & Functional Structure</li>
+            <li><span class="tech-icon">💡</span> Concept Generation & Evaluation</li>
+            <li><span class="tech-icon">🔩</span> System Design & CAD</li>
+            <li><span class="tech-icon">🧮</span> Engineering Calculations</li>
+            <li><span class="tech-icon">📦</span> Bill of Materials</li>
+            <li><span class="tech-icon">⚠️</span> Risk Assessment</li>
+            <li><span class="tech-icon">✅</span> Feasibility Study</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <h2>See more projects</h2>
+      <p>Browse the full portfolio for more engineering work.</p>
+      <a href="projects.html" class="btn btn-primary">All Projects →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Maximo Maturana</span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

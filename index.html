@@ -18,9 +18,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="utility-knife.html">Utility Knife</a></li>
-        <li><a href="trust-issues.html">Trust Issues</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -38,7 +44,7 @@
         <a href="contact.html" class="btn btn-ghost">Contact Me <span class="btn-arrow">→</span></a>
       </div>
     </div>
-    
+    <div class="hero-scroll-hint">scroll</div>
   </section>
 
   <!-- ABOUT -->
@@ -50,8 +56,8 @@
           <h2 class="section-heading">Building things that move, think, and respond.</h2>
         </div>
         <div class="about-right">
-          <p>I'm a Mechatronics Engineering student passionate about combining software and systems thinking. I build production line simulations, CMMS web apps, HMI interfaces, and interactive games — projects that live at the intersection of code, engineering, and design.</p>
-          <p>Currently studying at SRH, I work with Python, Docker, InfluxDB, Grafana, Flask, and web technologies to create projects that go beyond theory into working, deployable systems.</p>
+          <p>I'm a B.Sc. Mechatronics Engineering student passionate about combining software and systems thinking. I build production line simulations, CMMS web apps, HMI interfaces, autonomous robots, and interactive games — projects that live at the intersection of code, engineering, and design.</p>
+          <p>Currently studying at SRH Berlin, I work with Python, Docker, InfluxDB, Grafana, Flask, CAD modeling, and embedded systems to create projects that go beyond theory into working, deployable systems.</p>
           <a href="https://github.com/MaximoMaturana" target="_blank" class="btn btn-outline">GitHub Profile →</a>
         </div>
       </div>
@@ -71,7 +77,9 @@
         <div class="skill-item"><span class="skill-dot"></span>InfluxDB / Grafana</div>
         <div class="skill-item"><span class="skill-dot"></span>Docker</div>
         <div class="skill-item"><span class="skill-dot"></span>Flask / Web Dev</div>
-        <div class="skill-item"><span class="skill-dot"></span>Automation</div>
+        <div class="skill-item"><span class="skill-dot"></span>CAD / 3D Modeling</div>
+        <div class="skill-item"><span class="skill-dot"></span>Autonomous Robotics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Embedded Systems</div>
         <div class="skill-item"><span class="skill-dot"></span>Game Development (Pygame)</div>
       </div>
     </div>
@@ -84,11 +92,10 @@
       <h2 class="section-heading">What I've built</h2>
       <div class="projects-grid">
 
-        <!-- Card is one big link — click anywhere to go to project page -->
         <a href="utility-knife.html" class="proj-card">
           <div class="proj-card-badge">Latest Project</div>
-          
-               <img src="assets/utility-knife-preview.png" alt="Utility Knife Production Line" class="proj-card-img"> 
+          <img src="assets/utility-knife-preview.png" alt="Utility Knife Production Line" class="proj-card-img"
+               onerror="this.style.display='none'">
           <div class="proj-card-img proj-card-placeholder">
             <span>[ Add utility-knife-preview.png to assets/ ]</span>
           </div>
@@ -101,11 +108,41 @@
           </div>
         </a>
 
-        <a href="trust-issues.html" class="proj-card">
-          
-               <img src="assets/trust-issues-preview.png" alt="Trust Issues" class="proj-card-img"> -->
+        <a href="carebot.html" class="proj-card">
+          <img src="assets/carebot-cad-model.png" alt="CareBot" class="proj-card-img"
+               onerror="this.style.display='none'">
           <div class="proj-card-img proj-card-placeholder">
-            
+            <span>[ Add carebot-preview.png to assets/ ]</span>
+          </div>
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">Robotics · Mechatronics · VDI 2221</p>
+              <h3 class="proj-card-title">CareBot</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="follice-box.html" class="proj-card">
+          <img src="assets/follice-box-preview.png" alt="Follice Box" class="proj-card-img"
+               onerror="this.style.display='none'">
+          <div class="proj-card-img proj-card-placeholder">
+          
+          </div>
+          <div class="proj-card-overlay">
+            <div class="proj-card-overlay-inner">
+              <p class="proj-card-type">Mechanical Design · CAD · Autonomous</p>
+              <h3 class="proj-card-title">Follice Box</h3>
+              <span class="proj-card-cta">View Project →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="trust-issues.html" class="proj-card">
+          <img src="assets/trust-issues-preview.png" alt="Trust Issues" class="proj-card-img"
+               onerror="this.style.display='none'">
+          <div class="proj-card-img proj-card-placeholder">
+            <span>[ Add trust-issues-preview.png to assets/ ]</span>
           </div>
           <div class="proj-card-overlay">
             <div class="proj-card-overlay-inner">
@@ -130,8 +167,6 @@
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="utility-knife.html">Utility Knife</a>
-        <a href="trust-issues.html">Trust Issues</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>

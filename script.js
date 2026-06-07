@@ -7,9 +7,47 @@ const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a =>
+  navLinks.querySelectorAll('a:not(.nav-dropdown-trigger)').forEach(a =>
     a.addEventListener('click', () => navLinks.classList.remove('open'))
   );
+}
+
+// ---------- Projects dropdown — hover with delay so gap doesn't close it ----------
+const dropdownWrap    = document.querySelector('.nav-dropdown-wrap');
+const dropdownTrigger = document.querySelector('.nav-dropdown-trigger');
+const dropdownPanel   = document.querySelector('.nav-dropdown');
+
+if (dropdownWrap && dropdownPanel) {
+  let closeTimer = null;
+
+  function openDropdown() {
+    clearTimeout(closeTimer);
+    dropdownPanel.classList.add('dd-open');
+  }
+
+  function scheduleClose() {
+    closeTimer = setTimeout(() => {
+      dropdownPanel.classList.remove('dd-open');
+    }, 120); // 120ms grace period — cursor can cross any gap
+  }
+
+  // Hover on the wrapper (trigger + panel both live inside it)
+  dropdownWrap.addEventListener('mouseenter', openDropdown);
+  dropdownWrap.addEventListener('mouseleave', scheduleClose);
+
+  // If cursor re-enters the panel before the timer fires, cancel close
+  dropdownPanel.addEventListener('mouseenter', openDropdown);
+  dropdownPanel.addEventListener('mouseleave', scheduleClose);
+
+  // Mobile: tap trigger to toggle
+  if (dropdownTrigger) {
+    dropdownTrigger.addEventListener('click', (e) => {
+      if (window.getComputedStyle(hamburger).display !== 'none') {
+        e.preventDefault();
+        dropdownWrap.classList.toggle('open');
+      }
+    });
+  }
 }
 
 // ---------- Navbar scroll shadow ----------
@@ -36,7 +74,12 @@ document.querySelectorAll(
 );
 
 const fadeObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      fadeObserver.unobserve(e.target);
+    }
+  });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
@@ -44,8 +87,6 @@ document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 // ============================================================
 // LIGHTBOX
 // ============================================================
-
-// -- Build DOM --
 const lb = document.createElement('div');
 lb.id = 'lightbox';
 lb.innerHTML = `
@@ -74,14 +115,12 @@ const lbPrev    = document.getElementById('lb-prev');
 const lbNext    = document.getElementById('lb-next');
 const lbBack    = document.getElementById('lb-backdrop');
 
-let images = []; // [{src, alt, caption}]
+let images = [];
 let current = 0;
 
-// -- Collect all .screenshot-img that loaded successfully --
 function buildImageList() {
   images = [];
   document.querySelectorAll('img.screenshot-img').forEach(img => {
-    // Only add if the image actually loaded (naturalWidth > 0)
     if (img.naturalWidth > 0) {
       const card    = img.closest('.screenshot-card');
       const caption = card ? card.querySelector('.screenshot-caption')?.textContent : '';
@@ -98,14 +137,14 @@ function updateArrows() {
   lbNext.style.display = show ? 'flex' : 'none';
 }
 
-function open(index) {
+function openLB(index) {
   current = index;
   render();
   lbEl.classList.add('lb-open');
   document.body.style.overflow = 'hidden';
 }
 
-function close() {
+function closeLB() {
   lbEl.classList.remove('lb-open');
   document.body.style.overflow = '';
 }
@@ -127,20 +166,18 @@ function render() {
 function prev() { current = (current - 1 + images.length) % images.length; render(); }
 function next() { current = (current + 1) % images.length; render(); }
 
-// -- Wire controls --
-lbClose.addEventListener('click', close);
-lbBack.addEventListener('click', close);
+lbClose.addEventListener('click', closeLB);
+lbBack.addEventListener('click', closeLB);
 lbPrev.addEventListener('click', prev);
 lbNext.addEventListener('click', next);
 
 document.addEventListener('keydown', e => {
   if (!lbEl.classList.contains('lb-open')) return;
-  if (e.key === 'Escape')     close();
+  if (e.key === 'Escape')     closeLB();
   if (e.key === 'ArrowLeft')  prev();
   if (e.key === 'ArrowRight') next();
 });
 
-// Touch/swipe support
 let touchStartX = 0;
 lbEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
 lbEl.addEventListener('touchend',   e => {
@@ -148,36 +185,26 @@ lbEl.addEventListener('touchend',   e => {
   if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
 });
 
-// -- Attach click listeners to images --
 function attachClickListeners() {
   document.querySelectorAll('img.lb-ready').forEach(img => {
     img.addEventListener('click', () => {
       const idx = images.findIndex(item => item.src === img.src);
-      open(idx >= 0 ? idx : 0);
+      openLB(idx >= 0 ? idx : 0);
     });
   });
 }
 
-// -- Init: wait for images to load then set up --
 function init() {
   buildImageList();
   attachClickListeners();
 }
 
-// Some images may still be loading when the script runs
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    // Give images a moment to report naturalWidth
-    setTimeout(init, 200);
-  });
+  document.addEventListener('DOMContentLoaded', () => setTimeout(init, 200));
 } else {
   setTimeout(init, 200);
 }
 
-// Also re-init if any screenshot image loads after the fact
 document.querySelectorAll('img.screenshot-img').forEach(img => {
-  img.addEventListener('load', () => {
-    buildImageList();
-    attachClickListeners();
-  });
+  img.addEventListener('load', () => { buildImageList(); attachClickListeners(); });
 });

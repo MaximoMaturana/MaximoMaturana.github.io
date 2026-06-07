@@ -1351,3 +1351,136 @@ img.screenshot-img {
   #lb-img { max-width: 96vw; max-height: 72vh; }
   #lb-footer { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
 }
+
+/* ============================================================
+   NAV DROPDOWN — added for Projects hover menu
+   Appended below the original style.css — do not modify above
+   ============================================================ */
+
+/* ============================================================
+   NAV DROPDOWN — paste this at the BOTTOM of style.css
+   ============================================================ */
+
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-chevron {
+  display: inline-block;
+  font-style: normal;
+  font-size: 0.85em;
+  margin-left: 2px;
+  transition: transform 0.22s ease;
+  line-height: 1;
+}
+
+/* Chevron rotates when dropdown is open */
+.nav-dropdown-wrap:hover .nav-chevron,
+.nav-dropdown-wrap.open .nav-chevron {
+  transform: rotate(90deg);
+}
+
+/* ── THE PANEL ── */
+.nav-dropdown {
+  /* Hidden by default */
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  top: calc(100% + 8px); /* tight — JS delay handles the gap, not whitespace */
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+
+  background: rgba(16, 16, 16, 0.98);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  min-width: 230px;
+  list-style: none;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  z-index: 200;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+/* Arrow pointer */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px; height: 10px;
+  background: rgba(16, 16, 16, 0.98);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+
+/* JS adds .dd-open to show it */
+.nav-dropdown.dd-open {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── LINKS ── */
+.nav-dropdown li a {
+  display: block;
+  padding: 0.65rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition), padding-left var(--transition);
+  text-transform: none;
+}
+
+/* No underline animation inside dropdown */
+.nav-dropdown li a::after { display: none; }
+
+.nav-dropdown li a:hover {
+  color: var(--text);
+  background: rgba(232, 48, 42, 0.08);
+  padding-left: 1.5rem;
+}
+
+/* Active item — red left accent */
+.nav-dropdown li a.active {
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: calc(1.2rem - 2px);
+}
+
+/* Subtle divider */
+.nav-dropdown li + li {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .nav-dropdown {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid var(--border);
+    background: transparent;
+    min-width: 0;
+    padding: 0;
+    opacity: 1;
+    pointer-events: auto;
+    display: none;
+  }
+  .nav-dropdown::before { display: none; }
+  .nav-dropdown.dd-open { display: none; } /* desktop class — ignored on mobile */
+  .nav-dropdown-wrap.open .nav-dropdown { display: block; } /* mobile uses .open */
+
+  .nav-dropdown li a {
+    padding: 0.75rem 3rem;
+    font-size: 0.85rem;
+  }
+}

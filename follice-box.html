@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Follice Box — Maximo Maturana</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">MM</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown-wrap">
+          <a href="projects.html" class="nav-dropdown-trigger active">Projects <span class="nav-chevron">›</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="utility-knife.html">Utility Knife Production Line</a></li>
+            <li><a href="carebot.html">CareBot</a></li>
+            <li><a href="follice-box.html" class="active">Follice Box</a></li>
+            <li><a href="trust-issues.html">Trust Issues</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="page-hero project-page-hero">
+    <div class="container">
+      <a href="projects.html" class="back-link">← All Projects</a>
+      <div class="project-header-meta">
+        <span class="project-type-badge">Mechanical Design · CAD · 2026</span>
+      </div>
+      <h1 class="page-hero-title">Follice Box</h1>
+      <p class="page-hero-sub">A conceptual autonomous follow-me cooler box — all-terrain motorized chassis, 50 L insulated storage, differential steering, and full engineering calculations targeting a €300–400 budget.</p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <p class="section-label">Overview</p>
+          <h2 class="section-heading">What does it do?</h2>
+          <p>Follice Box is a conceptual autonomous cooler platform designed to follow a user across different outdoor terrains — beaches, parks, campsites — without needing to be pushed or carried. It combines a motorized all-terrain chassis with a 50 L insulated cooler box, controlled through differential steering with speed reduction.</p>
+          <p>The project covers the full engineering design process: requirements definition, concept sketches, 3D CAD modeling, engineering calculations, component selection, power distribution, chassis and cooler assembly, and a complete bill of materials — all targeting a €300–400 budget with standard DIN components.</p>
+        </div>
+        <div class="project-tech-sidebar">
+          <p class="sidebar-label">Key Specs</p>
+          <ul class="tech-list">
+            <li><span class="tech-icon">⚖️</span> Design mass: ~60 kg</li>
+            <li><span class="tech-icon">📦</span> Cooler capacity: 50 L</li>
+            <li><span class="tech-icon">🏃</span> Max speed: 1.2 m/s</li>
+            <li><span class="tech-icon">⛰️</span> Slope capability: 10°</li>
+            <li><span class="tech-icon">🔋</span> Runtime: ~3 hours</li>
+            <li><span class="tech-icon">⚡</span> Voltage: 24 V system</li>
+            <li><span class="tech-icon">📏</span> Chassis: 863 × 500 × 156 mm</li>
+            <li><span class="tech-icon">💶</span> Budget target: €300–400</li>
+          </ul>
+          <p class="sidebar-label" style="margin-top:2rem;">Disciplines</p>
+          <ul class="tech-list">
+            <li><span class="tech-icon">📐</span> Mechanical Design</li>
+            <li><span class="tech-icon">🖥️</span> CAD / 3D Modeling</li>
+            <li><span class="tech-icon">🔩</span> DIN Component Selection</li>
+            <li><span class="tech-icon">🧮</span> Engineering Calculations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Scope / Architecture -->
+  <section class="section alt-section">
+    <div class="container">
+      <p class="section-label">Project Scope</p>
+      <h2 class="section-heading">How the design was developed</h2>
+      <div class="arch-flow">
+        <div class="arch-step">
+          <div class="arch-step-num">01</div>
+          <h3>Requirements & Constraints</h3>
+          <p>Mass targets, max speed, slope capability, runtime, budget, and safety requirements (obstacle detection, emergency stop) defined upfront to guide every design decision.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">02</div>
+          <h3>Conceptualized Design</h3>
+          <p>Three design iterations (V1–V3) sketched and evaluated. Final geometry balances cooler volume, chassis proportions, and all-terrain wheel placement.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">03</div>
+          <h3>Engineering Calculations</h3>
+          <p>Traction force, torque requirements, wheel speed, and power budget derived analytically from design mass and slope targets to validate the full drivetrain.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-step">
+          <div class="arch-step-num">04</div>
+          <h3>3D CAD & Assembly</h3>
+          <p>Full system modeled in CAD: cooler box (HDPE outer / PU foam infill), chassis frame, wheel-motor mounts, and electronics bay. Technical drawings and BOM complete the package.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Project Gallery</p>
+      <h2 class="section-heading">Renders, sketches & assembly</h2>
+      <p class="screenshots-hint">Click any image to view full size — use arrows or keyboard to browse.</p>
+      <div class="screenshots-grid">
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/follice-box-hero.jpg"
+                 alt="Follice Box full assembly render"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ follice-box-hero.jpg not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Full assembly render — cooler on autonomous chassis with all-terrain wheels</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/follice-box-sketches.jpg"
+                 alt="Follice Box design sketches V1 V2 V3"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ follice-box-sketches.jpg not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Conceptualized design — three sketch iterations (V1 → V2 → V3)</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/follice-box-chassis.png"
+                 alt="Follice Box chassis assembly"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ follice-box-chassis.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">Chassis assembly — exploded view showing drive motors, electronics, and wheel mounts</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <img src="assets/follice-box-dimensions.png"
+                 alt="Follice Box system dimensions"
+                 class="screenshot-img"
+                 onerror="this.parentElement.innerHTML='<div class=\'placeholder-label\'>[ follice-box-dimensions.png not found ]</div>'">
+          </div>
+          <p class="screenshot-caption">System dimensions — total envelope 862 × 500 × 442 mm with ground clearance 35 mm</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section alt-section">
+    <div class="container">
+      <p class="section-label">Design Highlights</p>
+      <h2 class="section-heading">Key engineering decisions</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>All-Terrain Chassis</h3>
+          <p>Four motorized wheels with 35 mm ground clearance. Differential steering achieved by reducing one rear wheel's speed — no dedicated steering motor required.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧊</div>
+          <h3>50 L Cooler Box</h3>
+          <p>External dims 600 × 400 × 350 mm with 30 mm HDPE walls and PU foam insulation. Brass and aluminium closing mechanisms for durability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔋</div>
+          <h3>24 V Power System</h3>
+          <p>Full power distribution flow chart maps the electrical architecture — from battery to motor drivers and auxiliary systems — targeting ~3 hours of runtime.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>DIN-Standard BOM</h3>
+          <p>All mechanical components selected from standard DIN catalogues, keeping costs within the €300–400 target and simplifying sourcing and future iteration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <h2>See more projects</h2>
+      <p>Browse the full portfolio for more engineering work.</p>
+      <a href="projects.html" class="btn btn-primary">All Projects →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Maximo Maturana</span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Maximo Maturana · Mechatronics Student</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
