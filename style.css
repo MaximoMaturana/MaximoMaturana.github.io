@@ -429,7 +429,7 @@ code {
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 12;
   background: #111;
   border: 1px solid var(--border);
   text-decoration: none;
@@ -446,15 +446,17 @@ code {
   border-color: rgba(232,48,42,0.35);
 }
 
-/* The image — fills the entire card */
+
 .proj-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
   display: block;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               filter 0.5s ease;
   filter: brightness(0.75);
+  margin: auto;
 }
 
 .proj-card:hover .proj-card-img {
