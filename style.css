@@ -243,7 +243,7 @@ code {
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 800;
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: var(--text);
   margin-bottom: 1.8rem;
 }
@@ -1482,5 +1482,37 @@ img.screenshot-img {
   .nav-dropdown li a {
     padding: 0.75rem 3rem;
     font-size: 0.85rem;
+  }
+}
+
+/* ── Mobile hero centering fix ── */
+@media (max-width: 600px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    text-align: center;
+  }
+
+  .hero-sub {
+    text-align: center;
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .hero-scroll-hint {
+    display: none;
   }
 }
