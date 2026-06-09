@@ -154,7 +154,10 @@
     <p style="font-size:0.85rem; color:#888; margin-bottom:1.5rem;">
       Arrow keys or WASD to move &nbsp;·&nbsp; Space to jump &nbsp;·&nbsp; R to retry &nbsp;·&nbsp; Esc = level select
     </p>
-    <div style="
+
+    <!-- Click-to-start wrapper -->
+    <div id="game-wrapper" style="
+      position: relative;
       width: 100%;
       max-width: 1000px;
       aspect-ratio: 5/3;
@@ -164,14 +167,59 @@
       overflow: hidden;
       margin-top: 1rem;
     ">
+      <!-- Overlay shown before game starts -->
+      <div id="game-overlay" onclick="startGame()" style="
+        position: absolute;
+        inset: 0;
+        background: #0d0d0d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        gap: 16px;
+      ">
+        <div style="
+          font-family: 'Syne', sans-serif;
+          font-size: 1.8rem;
+          font-weight: 800;
+          color: #f0ede8;
+        ">Trust Issues</div>
+        <div style="
+          background: #e8302a;
+          color: #fff;
+          font-family: 'DM Sans', sans-serif;
+          font-weight: 500;
+          font-size: 1rem;
+          padding: 14px 36px;
+          border-radius: 6px;
+          transition: background 0.2s;
+        ">▶ &nbsp; Click to Play</div>
+        <div style="color: #555; font-family: 'DM Sans', sans-serif; font-size: 0.8rem;">
+          Loads in ~10 seconds · WebAssembly
+        </div>
+      </div>
+
+      <!-- The actual game iframe (src set by JS on click) -->
       <iframe
-        src="trust_issues_game/index.html"
-        style="width: 100%; height: 100%; border: none;"
-        allowfullscreen>
+        id="game-frame"
+        src=""
+        style="width: 100%; height: 100%; border: none; display: block;"
+        allowfullscreen
+        allow="autoplay">
       </iframe>
     </div>
+
   </div>
 </section>
+
+<script>
+function startGame() {
+  document.getElementById('game-overlay').style.display = 'none';
+  document.getElementById('game-frame').src = 'trust_issues_game/index.html';
+}
+</script>
 
 
   <section class="section cta-section">
