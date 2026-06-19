@@ -216,8 +216,12 @@
 
 <script>
 function startGame() {
-  document.getElementById('game-overlay').style.display = 'none';
-  document.getElementById('game-frame').src = 'trust_issues_game/index.html';
+    document.getElementById('game-overlay').style.display = 'none';
+    document.getElementById('game-frame').src = 'trust_issues_game/index.html';
+    // Give the iframe focus after a short delay so blur doesn't fire
+    setTimeout(function() {
+        document.getElementById('game-frame').focus();
+    }, 500);
 }
 </script>
 
