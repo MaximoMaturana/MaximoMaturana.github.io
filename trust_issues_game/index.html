@@ -80,14 +80,11 @@ async def custom_site():
     platform.window.canvas.style.visibility = "visible"
 
     apk = "trust_issues_clean.apk"
-
     bundle = "trust_issues_clean"
 
-    # the C or js loader could do that but be explicit.
-    appdir = Path(f"/data/data/{bundle}") # /data/data/trust_issues_clean
+    appdir = Path(f"/data/data/{bundle}")
     appdir.mkdir()
 
-    # mount apk
     cfg = {
         "io": "url",
         "type":"mount",
@@ -105,38 +102,31 @@ async def custom_site():
 
     def pg_bar(pos):
         nonlocal marginx, marginy
-        total = track.len or 10  # avoid div0
-        slot = 600 / total  # 60% of 1000px
+        total = track.len or 10
+        slot = 600 / total
 
         pygame.draw.rect(screen,(10,10,10),( marginx-10, marginy-10, (total*slot)+20, 66 ) )
         pygame.draw.rect(screen,(0,255,0), ( marginx, marginy, track.pos*slot, 54) )
 
-    # wait until zip mount + overlayfs is complete
     while not track.ready:
         pg_bar(track.pos)
         compose()
         await asyncio.sleep(.1)
 
-    # fill it up in case it was cached and instant download
     pg_bar(track.len)
     compose()
 
-    # preloader will change dir and prepend it to sys.path
     platform.run_main(PyConfig, loaderhome= appdir / "assets", loadermain=None)
 
-    # wait preloading complete
     while embed.counter()<0:
         await asyncio.sleep(.1)
 
     main = appdir / "assets" / "main.py"
 
-    # start async top level machinery and add a console.
     await TopLevel_async_handler.start_toplevel(platform.shell, console=window.python.config.debug)
 
-    # now that apk is mounted we have access to font cache
     __import__(__name__).__file__ = str(main)
 
-    # now make a prompt
     fnt = pygame.sysfont.SysFont("freesans", 48)
 
     def ui_callback(pkg, error=None):
@@ -149,7 +139,6 @@ async def custom_site():
         screen.blit(prompt, ( marginx + 80, marginy - 10 ) )
         compose()
 
-    # test/wait if user media interaction required
     if not platform.window.MM.UME:
         fnt = pygame.sysfont.SysFont("freesans", 48)
         prompt = fnt.render("Ready to start !", True, (0, 255, 136))
@@ -162,7 +151,6 @@ async def custom_site():
         while not platform.window.MM.UME:
             await asyncio.sleep(.1)
 
-    # cleanup
     screen.fill( (0, 0, 0) )
     pygame.display.flip()
 
@@ -191,8 +179,6 @@ asyncio.run( custom_site() )
 
 --><script type="application/javascript">
 // END BLOCK
-
-// this dict is available under PyConfig.config from __main__
 
 config = {
     xtermjs : "1" ,
@@ -242,17 +228,14 @@ config = {
         div.emscripten_border { border: 1px solid black; }
         div.thick_border { border: 4px solid black; }
 
-        /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
         canvas.emscripten {
             border: 0px none;
             background-color: #0a0b12;
             width: 1000px;
             height: 600px;
             z-index: 5;
-
             padding: 0;
             margin: 0 auto;
-
             position: absolute;
             top: 0;
             bottom: 0;
@@ -378,12 +361,11 @@ config = {
 
     async function custom_onload(debug_hidden) {
         console.log(__FILE__, "custom_onload")
-
         pyconsole.hidden = debug_hidden
         system.hidden = debug_hidden
         transfer.hidden = debug_hidden
         info.hidden = debug_hidden
-        box.hidden =  debug_hidden
+        box.hidden = debug_hidden
     }
 
     function custom_prerun(){
@@ -392,7 +374,6 @@ config = {
 
     function custom_postrun(){
         console.log(__FILE__, "custom_postrun")
-
         window.addEventListener("keydown", function(e) {
             if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
                 if (!python.config.debug)
